@@ -1,0 +1,7 @@
+C:\Users\Thomas Mizrahi\Documents\Visual Studio 2017\Projects\ThingsBeLikeBot\ThingsBeLikeBot\bin\Debug\ThingsBeLikeBot.exe.config
+C:\Users\Thomas Mizrahi\Documents\Visual Studio 2017\Projects\ThingsBeLikeBot\ThingsBeLikeBot\bin\Debug\ThingsBeLikeBot.exe
+C:\Users\Thomas Mizrahi\Documents\Visual Studio 2017\Projects\ThingsBeLikeBot\ThingsBeLikeBot\bin\Debug\ThingsBeLikeBot.pdb
+C:\Users\Thomas Mizrahi\Documents\Visual Studio 2017\Projects\ThingsBeLikeBot\ThingsBeLikeBot\obj\Debug\ThingsBeLikeBot.csprojAssemblyReference.cache
+C:\Users\Thomas Mizrahi\Documents\Visual Studio 2017\Projects\ThingsBeLikeBot\ThingsBeLikeBot\obj\Debug\ThingsBeLikeBot.csproj.CoreCompileInputs.cache
+C:\Users\Thomas Mizrahi\Documents\Visual Studio 2017\Projects\ThingsBeLikeBot\ThingsBeLikeBot\obj\Debug\ThingsBeLikeBot.exe
+C:\Users\Thomas Mizrahi\Documents\Visual Studio 2017\Projects\ThingsBeLikeBot\ThingsBeLikeBot\obj\Debug\ThingsBeLikeBot.pdb
