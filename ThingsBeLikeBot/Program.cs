@@ -59,6 +59,7 @@ namespace ThingsBeLikeBot
             stopItem.Click += MenuItem_Click;
 
             timer = new System.Threading.Timer(new System.Threading.TimerCallback(Timercall), null, TIMER_START_SPAN, TIMER_PERIOD_SPAN);
+            System.Net.NetworkInformation.NetworkChange.NetworkAvailabilityChanged += NetworkChange_NetworkAvailabilityChanged;
             Application.Run();
 
             showItem.Dispose();
@@ -68,6 +69,12 @@ namespace ThingsBeLikeBot
             icon.Dispose();
             contextMenu.Dispose();
             timer.Dispose();
+        }
+
+        private static void NetworkChange_NetworkAvailabilityChanged(object sender, System.Net.NetworkInformation.NetworkAvailabilityEventArgs e)
+        {
+            if (e.IsAvailable)
+                timer.Change(2 * 1000, TIMER_PERIOD_SPAN); //makes the timer call it's event in 2 seconds (then returns to normal)
         }
 
         private static void ShowItem_Click(object sender, EventArgs e)
@@ -155,7 +162,7 @@ namespace ThingsBeLikeBot
                 lastPost = DateTime.Now;
                 WriteBotData(timesPostedToday, lastPost);
 
-                icon.ShowBalloonTip(5000, "Posted.", "posts today: " + timesPostedToday, ToolTipIcon.None);
+                //icon.ShowBalloonTip(5000, "Posted.", "posts today: " + timesPostedToday, ToolTipIcon.None);
             }
             else if(process.ExitCode != -1) //ExitCode of -1 means it couldn't connect to the internet
                 icon.ShowBalloonTip(5000, "Seems like something went wrong on ImageCreator", "The process has terminated with code " + process.ExitCode, ToolTipIcon.Error);
