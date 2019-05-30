@@ -95,20 +95,37 @@ namespace ThingsBeLikeBot
                 if (timesPostedToday < POSTS_PER_DAY)
                 {
                     StringBuilder builder = new StringBuilder(30);
-                    TimeSpan diff = DateTime.Now.Subtract(lastPost.AddMinutes(DELAY_BETWEEN_POSTS_MINUTES));
-                    builder.Append("Last posted at ");
+                    TimeSpan diff = lastPost.AddMinutes(DELAY_BETWEEN_POSTS_MINUTES).Subtract(DateTime.Now);
+                    if (lastPost.Day == DateTime.Now.Day)
+                    {
+                        builder.Append("Last posted today at ");
+                    }
+                    else
+                    {
+                        builder.Append("Last posted ");
+                        builder.Append(lastPost.Day);
+                        builder.Append('/');
+                        builder.Append(lastPost.Month);
+                        builder.Append(" at ");
+                    }
                     builder.Append(lastPost.Hour);
                     builder.Append(':');
                     builder.Append(lastPost.Minute);
                     builder.AppendLine(".");
-                    builder.Append("Next post in ");
-                    if (diff.Hours != 0)
+
+                    if (diff.TotalMinutes > 0)
                     {
-                        builder.Append(-diff.Hours);
-                        builder.Append("h ");
+                        builder.Append("Next post in ");
+                        if (diff.Hours != 0)
+                        {
+                            builder.Append(diff.Hours);
+                            builder.Append("h ");
+                        }
+                        builder.Append(diff.Minutes);
+                        builder.Append("m");
                     }
-                    builder.Append(-diff.Minutes);
-                    builder.Append("m");
+                    else
+                        builder.Append("Next post soon enough");
                     tip = builder.ToString();
                 }
                 else

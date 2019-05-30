@@ -27,7 +27,7 @@ namespace ImageCreator
 #if LOG_DATA
             DataLogger.Log(String.Concat("[WordnikManager] Getting ", limit, " nouns"), LoggingMode.Message);
 #endif
-            String req = "https://api.wordnik.com/v4/words.json/randomWords?hasDictionaryDef=true&includePartOfSpeech=noun%2C%20pronoun%2C%20proper-noun&minDictionaryCount=1&limit=" + limit + "&api_key=" + Constants.WORDNIK_API_KEY;
+            String req = "https://api.wordnik.com/v4/words.json/randomWords?hasDictionaryDef=true&includePartOfSpeech=noun%2Cpronoun%2Cproper-noun&minDictionaryCount=1&limit=" + limit + "&api_key=" + Constants.WORDNIK_API_KEY;
             String resp;
 
             if(!TryGetResponse(req, 10, out resp))
@@ -100,7 +100,10 @@ namespace ImageCreator
 #endif
                         return true;
                     }
-                    catch { }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e);
+                    }
                 }
             }
 #if LOG_DATA
