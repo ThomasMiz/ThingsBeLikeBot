@@ -1,6 +1,6 @@
 # ThingsBeLikeBot
 
-This is a bot that posts randomly generated memes on Twitter, always with the same format. Can be found [here](https://twitter.com/ThingsBeLikeBot).
+This is a bot that posts randomly generated memes on Twitter, always with the same format. Can be found [here](https://twitter.com/ThingsBeLikeBot), although it is no longer running. This repo serves only as an archive of an old project.
 
 Works by using the Wordnik API to get a random word, then uses Google Customsearch to search for a related image and groups everything together with OpenGL, drawing everything into a renderbuffer, reading the pixels into a bitmap and saving it as JPG to be posted on twitter (using of course, the Twitter API).
 
