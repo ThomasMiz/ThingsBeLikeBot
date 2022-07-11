@@ -1,4 +1,6 @@
-﻿using System;
+// Sorry, none of the keys in this file are valid ;)
+
+using System;
 
 namespace ImageCreator
 {
